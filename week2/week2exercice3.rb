@@ -12,7 +12,7 @@ soit divisibles par 100, mais pas par 400.
 =end
 
 # generic prompt instruction program
-require './prompt.rb'
+require '../prompt.rb'
 
 # doctest: method leap_year?() should return true if it's a leap year, false otherwise
 #
@@ -59,7 +59,7 @@ DAYS_YEAR_LEAP     = 366
 #
 # 
 def days_in_year(year)
- return leap_year?(year) ? DAYS_YEAR_LEAP : DAYS_YEAR_NON_LEAP
+ leap_year?(year) ? DAYS_YEAR_LEAP : DAYS_YEAR_NON_LEAP
 end
 
 
@@ -77,7 +77,7 @@ end
 ##################################
 
 # asking for a year
-$year = prompt('Enter a valid year').to_i
+year = prompt('Enter a valid year').to_i
 
-puts "Year #{$year} has #{days_to_minutes(days_in_year($year))} minutes. \n"
-puts "Year #{$year} is #{leap_year?($year) ? "a leap year" : "not a leap year"}."
+puts "Year #{year} has #{days_to_minutes(days_in_year(year))} minutes. \n"
+puts "Year #{year} is #{leap_year?(year) ? "a leap year" : "not a leap year"}."
