@@ -14,7 +14,6 @@ Grandma responds: NO, NOT SINCE 1938!
 require('../prompt.rb')
 
 def grandma_respons(sentence)
-    
 
   if sentence == 'BYE' # tired of Grandma
     exit
