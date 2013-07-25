@@ -11,27 +11,27 @@ You enter: HELLO GRANDMA
 Grandma responds: NO, NOT SINCE 1938!
 =end
 
-require('./prompt.rb')
+require('../prompt.rb')
 
-def grandma_respons( sentence )
+def grandma_respons(sentence)
     
-  # can Grandma hear you ?
-  if sentence == sentence.capitalize
-    return "NO, NOT SINCE #{rand(1930..1950)}!"
-  elsif sentence == 'BYE'
+
+  if sentence == 'BYE' # tired of Grandma
     exit
+  elsif sentence == sentence.upcase  # Shout to her
+    return "NO, NOT SINCE #{rand(1930..1950)}!"
   else
-    return 'HUH?! SPEAK UP, SONNY!'
+    return 'HUH?! SPEAK UP, SONNY!'    # can Grandma hear you ?
   end
   
 end
 
 
 # MAIN CONVERSATION #
-do 
-  puts question_grandma = prompt('Ask Grandma :')
+while true 
+  question_grandma = prompt('Ask Grandma :')
   puts grandma_respons(question_grandma)
-while true
+end
 
 
 
