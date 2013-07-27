@@ -36,5 +36,3 @@ end until question_grandma == 'BYE'
 
 
 
-
-
