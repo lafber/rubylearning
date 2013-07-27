@@ -16,8 +16,8 @@ require('../prompt.rb')
 def grandma_respons(sentence)
 
   if sentence == 'BYE' # tired of Grandma
-    exit
-  elsif sentence == sentence.upcase  # Shout to her
+    return 'BYE SONNY!'
+   elsif sentence == sentence.upcase  # Shout to her
     return "NO, NOT SINCE #{rand(1930..1950)}!"
   else
     return 'HUH?! SPEAK UP, SONNY!'    # can Grandma hear you ?
@@ -27,10 +27,12 @@ end
 
 
 # MAIN CONVERSATION #
-while true 
+
+begin
   question_grandma = prompt('Ask Grandma :')
   puts grandma_respons(question_grandma)
-end
+end until question_grandma == 'BYE' 
+
 
 
 
