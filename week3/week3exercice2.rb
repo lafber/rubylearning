@@ -3,8 +3,8 @@ LearningRuby Week 3 Exercice 2
 =end
 
 # source sentence to replace by the target sentence
-source_sentence    = 'word'
-target_sentence    = 'inserted word'
+source_sentence    = /\bword\b/    #directly create a Regexp object, behave better than a string in gsub. \b for word boundaries
+target_sentence    = 'inserted word '
 
 # Get file name
 file_name = ARGV[0] 
@@ -26,5 +26,5 @@ if source_content
   puts 'file succesfully treated'
 
 elsif
-  puts "File #{file_name} unknown o unreadable"
+  puts "File #{file_name} unknown or unreadable"
 end
