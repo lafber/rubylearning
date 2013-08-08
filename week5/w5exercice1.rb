@@ -27,12 +27,10 @@ end
  ##   MAIN   ##
 ##############
 
-#require('../prompt')
-#sentence_source = prompt('Please enter your sentence to shuffle')
+require('../prompt')
+sentence_source = prompt('Please enter your sentence to shuffle')
 
-sentence_target = UnpredictableString.new('It was a dark and stormy night.')
-
-#sentence_target = sentence_source
+sentence_target = UnpredictableString.new(sentence_source)
 
 puts sentence_target.scramble() 
 
