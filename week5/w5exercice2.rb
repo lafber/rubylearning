@@ -15,30 +15,31 @@ Note: This exercise is about inheritance, method overriding and method overloadi
 
 =end
 
+# encoding: UTF-8
 
 # Shape Class
 class Shape 
 
   attr_reader :name
 
-  
-  @sound_uri_folder = '/assets/sound/shape/'
+  @@sound_uri_folder = '/assets/sound/shape'
 
   def initialize(name)
     @name = name
   end
 
   def rotate(angle)
-    puts "rotation of the #{self.class} #{@name} by #{angle}°."
-    self.play_sound
+    puts "rotation of the #{self.class} #{@name} by #{angle}."
+    play_sound()
   end
   
   def play_sound
-    #gemsound.play("#{@sound_uri}/#{self.class}.mp3")
+    #gemsound.play("#{@@sound_uri_folder}/#{self.class}.mp3")
+    puts "#{@name} is playing #{@@sound_uri_folder}/#{self.class}.aif "
   end
 
   def to_s
-    puts "#{self.class} named #{@name}"
+    "#{self.class} named #{@name}"
   end
     
 end
