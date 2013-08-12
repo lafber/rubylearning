@@ -21,7 +21,7 @@ The testgameboard.rb program uses your GameBoard class (This is the 'client' sof
 
 
 # testgameboard.rb
-require_relative 'gameboard'  # add to change require to require_
+require_relative 'gameboard'  # add to change require to require_relative #don't know how atm
  
 # track how many guesses the user makes
 no_of_guesses = 0

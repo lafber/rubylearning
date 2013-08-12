@@ -46,9 +46,9 @@ class GameBoard
       puts 'Miss'
     end
     
-#   If the user win (3 hits) result = End instead of Hit 
+#   If the user win (3 hits) output End instead of Hit 
     if @no_of_hits == @hits_to_win
-      puts '**** You Win *****'
+      puts 'End'
       return 'kill' # 'End' is specified but 'kill' is used in calling program
     end
     
