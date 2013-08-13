@@ -14,16 +14,19 @@ class Repl
   end
   
   
-  def read(expression)
+  def _read(expression)
     @user_expression = expression.to_s
   end  
   
-  def myeval()
+  def _eval()
     @eval_result = eval(@user_expression)
+    
+    rescue Exception => err
+      puts err.message
   end
   
   
-  def print() 
+  def _print() 
     puts "=> #{(@eval_result) ? @eval_result : 'nil'}"
   end  
   
@@ -40,8 +43,8 @@ myRepl = Repl.new()
 
 while(myRepl.user_expression != 'exit')
     
-  myRepl.read(prompt('Enter your expression or exit'))
-  myRepl.myeval()
-  myRepl.print()
+  myRepl._read(prompt('Enter your expression or exit'))
+  myRepl._eval()
+  myRepl._print()
   
 end
