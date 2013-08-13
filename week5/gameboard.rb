@@ -24,9 +24,12 @@ The testgameboard.rb program uses your GameBoard class (This is the 'client' sof
 
 class GameBoard
 
+  attr_reader :no_of_hits, :cells_hits
+
   def initialize()
     @no_of_hits    = 0 #current number of hits
     @hits_to_win   = 3 #numbers of hits necessary to win
+    @cells_hits    = Array.new  # keep track of what was hit
   end
 
 
@@ -36,20 +39,16 @@ class GameBoard
 
 
   def check_yourself(user_guess)
+    
+    user_guess = user_guess.to_i
      
 #   Did the user hit a filled cells ?   
-    if @filled_cells.include?(user_guess.to_i)
+    if @filled_cells.include?(user_guess) and not @cells_hits.include?(user_guess)    
       @no_of_hits += 1    # 1 more hit
-      @filled_cells.delete(user_guess.to_i) #remove the hit cell otherwise user can cheat
-      puts 'Hit'
+      @cells_hits.push(user_guess) # keep track of the hit  
+      (@no_of_hits == @hits_to_win) ? (puts 'End'; return 'kill') : (puts 'Hit') #   If the user win (3 hits) output End instead of Hit 
     elsif
       puts 'Miss'
-    end
-    
-#   If the user win (3 hits) output End instead of Hit 
-    if @no_of_hits == @hits_to_win
-      puts 'End'
-      return 'kill'
     end
     
   end
