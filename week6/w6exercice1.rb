@@ -4,6 +4,9 @@ Write a class called Person that has balance as an instance variable and make it
 
 =end
 
+# encoding: UTF-8
+
+
 class Person
   
   attr_reader :balance, :name
@@ -16,5 +19,5 @@ class Person
   
 end
 
-blaf = Person.new('Bertrand', 78)
-puts "#{blaf.name} weight is #{blaf.balance} kg"
+blaf = Person.new('Bertrand', 999)
+puts "#{blaf.name} balance is #{blaf.balance} €"
