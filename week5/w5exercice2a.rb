@@ -1,8 +1,9 @@
+# encoding: UTF-8
+
 =begin
 "There will be an amoeba shape on the screen, with the others. When the user clicks on the amoeba, it will rotate like the others, and play a .hif sound file. The other figures like rectangle rotate around the center. I want the amoeba shape to rotate around a point on one end, like a clock hand !"
 =end
 
-# encoding: UTF-8
 
 # Shape Class
 class Shape 
@@ -20,17 +21,21 @@ class Shape
     play_sound()
   end
 
+ protected
+
   def rotate(angle)
-    puts "rotation of the #{self.class} #{@name} by #{angle}°."
+   "rotation of the #{self.class} #{@name} by #{angle}°."
   end
   
   def play_sound
-    puts "#{@name} is playing #{@@sound_uri_folder}/#{self.class}.aif "
+    "#{@name} is playing #{@@sound_uri_folder}/#{self.class}.aif "
   end
 
-  def to_s
-    "#{self.class} named #{@name}"
-  end
+  private
+
+    def to_s
+      "#{self.class} named #{@name}"
+    end
     
 end
 
@@ -69,11 +74,11 @@ class Amoeba < Shape
   end
   
   def rotate(angle)
-    puts "rotation of the #{self.class} #{@name} by #{angle}° around point on one end."
+    "rotation of the #{self.class} #{@name} by #{angle}° around point on one end."
   end
-  
+
   def play_sound
-    puts "#{@name} is playing #{@@sound_uri_folder}/#{self.class}.hif "
+    "#{@name} is playing #{@@sound_uri_folder}/#{self.class}.hif "
   end
   
 end
@@ -92,6 +97,7 @@ my_shapes = [
  
 # Called when the respective shapes are clicked
 my_shapes.each do |shape|
-  shape.on_click
+  puts shape
+  puts shape.on_click
 end
 
