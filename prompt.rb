@@ -15,25 +15,28 @@
 #
 #
 
+
 def prompt(instructions)
   
-  # Output instructions with borders 
-  puts ('-' * (instructions.length + 2)) 
-  puts "|#{instructions}|\n"
-  puts ('-' * (instructions.length + 2))
+  def decorate(instructions)
+    '-' * (instructions.length + 2) 
+  end
+
   
+  # Output instructions with borders 
+  puts decorate(instructions)
+  puts "|#{instructions}|\n"
+  puts decorate(instructions)  
   
   # flush buffer if not sync
-  if not (STDOUT.sync) 
-    STDOUT.flush 
-  end
+  STDOUT.flush unless STDOUT.sync
   
   
   # getting user input and removing ending returnss and returning the input
-  return gets.chomp
+  gets.chomp
   
 end
 
 
 # to test it
-#puts prompt('Enter your name  please :')
+# puts prompt('Enter your name  please :')
