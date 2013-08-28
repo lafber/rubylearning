@@ -21,32 +21,6 @@ genre	1	Index in a list of genres, or 255
 
 =begin
 
-Tests file with ruby doctest for ID3 tag reader
-
-
-doctest: could instanciate a SongId3tag object
-     >> my_local_song = SongId3Tag.new('song.mp3')
-     >> my_local_song.is_a?(SongId3Tag)
-     => true
-
-doctest : detecting or not the Id3 Tags in songs
-    >> my_local_song.is_id3_tag?
-    => true
-    
-    >> my_local_song_not_id3tag = SongId3Tag.new('song-not-id3tagged.mp3')
-    >> my_local_song_not_id3tag.is_id3_tag?
-    => false
-
-doctest : get ID3 tag
-    >> my_local_song.get_id3()
-    >> my_local_song.id3[:title]
-    => 'Dancing Shoes'
-    >> my_local_song.id3[:artist]
-    => 'Cliff Richard and The Shadows'
-    >> my_local_song.id3[:album]
-    => '(SUMMER HOLIDAY  1963)'
-    >> my_local_song.id3[:comment]
-    => '2000#100%-Free-MP3s(Dalnet)  '
     
 =end
 
